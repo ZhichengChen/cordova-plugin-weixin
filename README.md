@@ -1,3 +1,5 @@
+WeChat update to V3, this plugin is invlid, please go to V3 version [https://github.com/ZhichengChen/cordova-plugin-wechat-payments](https://github.com/ZhichengChen/cordova-plugin-wechat-payments)
+
 # cordova-plugin-weixin
 Wexin and wepay plugin import from http://wex5.com/
 

@@ -9,7 +9,7 @@ Send WeChat payment request.
 
 #Example
 
-See [https://github.com/ZhichengChen/cordova-plugin-wechat-payment-example](cordova-pluign-wechat-payment-example)
+See [cordova-pluign-wechat-payment-example](https://github.com/ZhichengChen/cordova-plugin-wechat-payment-example)
 
 #Install
 
@@ -51,13 +51,13 @@ See [https://github.com/ZhichengChen/cordova-plugin-wechat-payment-example](cord
 
 如果使用默认参数（使用WeX5 的账号测试），请确保应用的包名是com.justep.x5.takeout
 
-上线篇
+#上线篇
 
 上面说的是用WeX5的默认配置进行开发测试，但是一旦自己的app开发好了要上线，我们肯定要用自己的商户信息来打包应用（当然你要用WeX5的默认商户配置，然后把钱都支付到WeX5的账户上我们也非常欢迎^_^）,这个时候就需要修改插件中的配置来让开发的app支付到自己公司的账上。
 
 首先我们来修改weixin支付的参数 ，打开/Native/plugins/com.justep.cordova.plugin.weixin/plugin.xml
 
-1. 修改ios部分
+##修改ios部分
 
       <preference name="weixin_appid" value="wx832f85feb2e76b14" />
       <preference name="weixin_partner_id" value="1230177801" />
@@ -84,7 +84,7 @@ See [https://github.com/ZhichengChen/cordova-plugin-wechat-payment-example](cord
 
 wx832f85feb2e76b14这个值也要改哦
 
-2. android部分
+##android部分
 
     <preference name="weixin_appid" value="wx832f85feb2e76b14" />
     <preference name="weixin_partner_id" value="1230177801" />

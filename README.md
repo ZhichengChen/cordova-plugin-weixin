@@ -9,11 +9,11 @@ Send WeChat payment request.
 
 #Example
 
-See [cordova-pluign-wechat-payment-example](https://github.com/ZhichengChen/cordova-plugin-wechat-payment-example)
+See [cordova-plugin-wechat-payment-example](https://github.com/ZhichengChen/cordova-plugin-wechat-payment-example)
 
 #Install
 
-1. `cordova plugin add https://github.com/ZhichengChen/cordova-plugin-weixin --variable activityname=YOUR_ACTIVITY_NAME`
+1. `cordova plugin add https://github.com/ZhichengChen/cordova-plugin-weixin`
 
 2. `cordova build ios` or `cordova build android`
 
@@ -21,7 +21,6 @@ See [cordova-pluign-wechat-payment-example](https://github.com/ZhichengChen/cord
 
 ##Send payment request
 
-        var weixin = navigator.weixin;
         weixin.generatePrepayId({
                 "body" : "x5外卖",
                 "accessToken" : accessToken,
@@ -34,20 +33,19 @@ See [cordova-pluign-wechat-payment-example](https://github.com/ZhichengChen/cord
                 weixin.sendPayReq(prepayId, function(message) {
                     var responseCode = parseInt(message);
                     if (responseCode === 0) {
-                        payDtd.resolve(1);
+                        alert("微信支付成功");
                     } else if (!isNaN(responseCode)) {
-                        payDtd.reject((-13) + responseCode);
+                        alert("微信支付失败(-13)"+responseCode);
                     } else {
-                        payDtd.reject(-10);
+                        alert("微信支付失败(-10)");
                     }
                 }, function(message) {
-                    justep.Util.hint("微信支付失败！");
-                    payDtd.reject(-10);
+                    alert("微信支付失败(-10)");
                 });
             }, function(message) {
-                justep.Util.hint("微信支付失败！");
-                payDtd.reject(-11);
+                alert("微信支付失败(-11)");
             });
+        });
 
 如果使用默认参数（使用WeX5 的账号测试），请确保应用的包名是com.justep.x5.takeout
 
